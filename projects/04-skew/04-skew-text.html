@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Skew Text on Hover</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ff90b3;
+    }
+
+    .text {
+      margin: 250px 400px;
+      text-align: center;
+      display: inline-block;
+      transition: .5s;
+      display: flex;
+    }
+
+    .text span {
+      text-transform: uppercase;
+      background-color: #fff;
+      width: 120px;
+      height: 120px;
+      display: block;
+      line-height: 120px;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      color: #a0a0a0;
+      font-size: 40px;
+      transition: .5s;
+    }
+
+    .text span::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+
+    .text:hover span:nth-child(1) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    .text:hover span:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    .text:hover span:nth-child(odd) {
+      transform: skewY(-15deg);
+      color: #b5b5b5;
+      box-shadow: 0 60px 20px rgba(0, 0, 0, .1);
+    }
+
+    .text:hover span:nth-child(even) {
+      transform: skewY(15deg);
+      color: #b5b5b5;
+      box-shadow: 0 60px 20px rgba(0, 0, 0, .1), inset 0 0 30px rgba(0, 0, 0, .2);
+
+    }
+
+    .text:hover {
+      transform: rotateX(35deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text">
+    <span>S</span>
+    <span>k</span>
+    <span>e</span>
+    <span>w</span>
+  </div>
+</body>
+
+</html>
