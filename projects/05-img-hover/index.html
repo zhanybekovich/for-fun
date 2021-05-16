@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Hover Effect</title>
+  <style>
+    body {
+      background-color: #262626;
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+    }
+
+    .box {
+      position: relative;
+      height: 250px;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      color: #fff;
+      perspective: 50em;
+      box-sizing: border-box;
+      transition: .5s ease;
+      overflow: hidden;
+      border-radius: 1em;
+    }
+
+    .box img {
+      width: 100%;
+      object-fit: cover;
+      transition: .5s;
+      transform-origin: 0 100%;
+    }
+
+    .text-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 20px 30px;
+      box-sizing: border-box;
+      z-index: 1;
+      opacity: 0;
+      background-color: #f00;
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0;
+      transition: .5s;
+    }
+
+    .text-wrapper h2,
+    .text-wrapper p {
+      line-height: 1.3em;
+    }
+
+    .box:hover img {
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+
+    .box:hover .text-wrapper {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="box">
+      <img src="../../images/05-img-hover.jpg" alt="Image hover effect">
+      <div class="text-wrapper">
+        <h2>Lorem ipsum dolor sit</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius blanditiis incidunt mollitia deserunt tempora
+          facere porro molestiae iusto natus est at illum esse dolorem officiis quos, placeat error fugiat asperiores!
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
