@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progressbar animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      animation: pulse infinite 5s;
+    }
+
+    .progressbar-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+      padding: 20px  40px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    }
+
+    .progressbar {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 10px;
+      background-color: #f1f1f1;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progressbar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+      animation: load infinite 5s;
+    }
+
+    @keyframes load {
+      0% {
+        width: 0%;
+        background-color: #f00;
+      }
+      50% {
+        width: 70%;
+        background-color: #00f;
+      }
+      100% {
+        width: 100%;
+        background-color: #0f0;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        background-color: #f00;
+      }
+      50% {
+        background-color: #00f;
+      }
+      100% {
+        background-color: #0f0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progressbar-wrapper">
+    <div class="progressbar">
+    </div>
+  </div>
+</body>
+</html>
